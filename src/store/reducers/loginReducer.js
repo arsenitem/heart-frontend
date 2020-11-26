@@ -8,7 +8,7 @@ const initialState = {
 let loginReducer = function(state = initialState, action) {
     let stateCopy
     switch(action.type) {
-        case "LOGIN":
+        case "LOGIN":      
             stateCopy = {
                 userLoggedIn: true,
                 userToken: action.token,
@@ -27,5 +27,9 @@ let loginReducer = function(state = initialState, action) {
         default: return state;
     }
 }
+
+
+export const login = (token, userName, userRole) => ({type:"LOGIN", token, userName, userRole});
+export const logout = () => ({type:"LOGOUT"});
 
 export default loginReducer;

@@ -1,11 +1,10 @@
+import { connect } from "react-redux";
+import {login, logout} from '../store/reducers/loginReducer'
 const { Row, Col, Form, Button, Container } = require("react-bootstrap");
 
-function Login() {
+function Login(props) {
     return (
         <div>
-            <div>
-                
-            </div>
               <Container>
                   <h2 style={{textAlign: "center", color: "red", marginTop:90}}>ИСПБ "Сердце"</h2>
                 <Row className="justify-content-center" style={{marginTop: 100}}>   
@@ -21,7 +20,7 @@ function Login() {
                             <Form.Group controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Запомнить меня" />
                             </Form.Group>
-                            <Button variant="danger" type="submit" style={{width: "100%"}}>
+                            <Button variant="danger" type="submit" style={{width: "100%"}} onClick={() => {props.login('token','testUser', 'admin')}}>
                                 Войти
                             </Button>
                        </Form>
@@ -34,5 +33,11 @@ function Login() {
         </div>
     );
   }
-  
-  export default Login;
+
+function mapStateToProps(state) {
+    return {
+        state: state
+    }
+}
+
+export default connect(mapStateToProps, {login, logout})(Login);
