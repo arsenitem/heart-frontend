@@ -3,6 +3,7 @@ function Profile() {
     return (
         <div>
             Thats my profile oleoleole
+            
         </div>
     );
 }

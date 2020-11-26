@@ -5,7 +5,8 @@ import './App.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-
+import api from './api'
+import { Row } from 'react-bootstrap';
 function App(props) {
   console.log(props)
   return (
@@ -22,14 +23,13 @@ function App(props) {
       
     :
     <div>
-       <Route path="/" component={Login}/>
+      <Route path="/" component={Login}/>
       <Route path="/login">
         <Login/>
       </Route>
     </div>
    
     }
-   
     </BrowserRouter>
    
   );

@@ -8,6 +8,7 @@ function Layout(props) {
         <div style={{float: "left"}}>
             <div className="page">
                 <header tabindex="0">
+                    <label style={{marginLeft: "10%", color: "#ef0000"}}>ИСПБ "Сердце"</label>
                     <div style={{marginRight: 0, marginLeft: "auto"}}>
                     {props.state.loginReducer.userName}
                         <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer"}} onClick={() => props.logout()}></i>
@@ -23,7 +24,7 @@ function Layout(props) {
                         <div id="nav-content" tabindex="0">
                             <ul>
                                 <li>
-                                    <Link to="/profile" className="nav-link">
+                                    <Link to="/main" className="nav-link">
                                         <div className="nav-icon-link">
                                             <i class="fas fa-user"></i>
                                         </div>
