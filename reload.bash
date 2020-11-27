@@ -1,7 +1,8 @@
-screen -r app
-echo 'reloading app'
+pkill screen
 git pull
-fuser -k 3006/tcp
+screen -d -m -S  app
+bash -c 'echo 'reloading app'
 npm run start
-screen -d
+echo 'building app in background''
+
 
