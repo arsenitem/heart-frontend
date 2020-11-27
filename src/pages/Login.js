@@ -11,11 +11,11 @@ function Login(props) {
                        <Form style={{padding:"90px", border: "1px solid red"}}>                      
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Логин</Form.Label>
-                                <Form.Control type="email" placeholder="Введите логин" />                               
+                                <Form.Control type="text" placeholder="Введите логин" className="login-input"/>                               
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Пароль</Form.Label>
-                                <Form.Control type="password" placeholder="Введите пароль" />
+                                <Form.Control type="password" placeholder="Введите пароль" className="login-input"/>
                             </Form.Group>
                             <Form.Group controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Запомнить меня" />
