@@ -11,7 +11,7 @@ function Layout(props) {
                     <label style={{marginLeft: "10%", color: "#ef0000"}}>СППР "Сердце"</label>
                     <div style={{marginRight: 0, marginLeft: "auto"}}>
                     {props.state.loginReducer.userName}
-                        <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer"}} onClick={() => props.logout()}></i>
+                        <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer", marginLeft:"20px"}} onClick={() => props.logout()}></i>
                     </div>
                 </header>
                 <div id="nav-container">
@@ -22,7 +22,7 @@ function Layout(props) {
                             <span className="icon-bar"></span>
                         </div>
                         <div id="nav-content" tabindex="0">
-                            <ul>
+                            <ul style={{fontSize:"26px"}}>
                                 <li>
                                     <Link to="/main" className="nav-link">
                                         <div className="nav-icon-link">
@@ -32,14 +32,25 @@ function Layout(props) {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/profile" className="nav-link">
+                                    <Link to="/users" className="nav-link">
                                         <div className="nav-icon-link">
                                             <i class="fas fa-users"></i>
                                         </div>
-                                      Больные
+                                        Больные
+                                    </Link>
+
+                                </li>
+                                <li>
+                                    <Link to="/notifications" className="nav-link">
+                                        <div className="nav-icon-link notifications">
+                                            <div className="notification-counter">
+                                                3
+                                            </div>
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        Оповещения
                                     </Link>
                                 </li>
-                                <li><Link to="/profile" className="nav-link">Еще</Link></li>
                                 <li><Link to="/profile" className="nav-link">Что-то</Link></li>
                                 <li className="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
                             </ul>

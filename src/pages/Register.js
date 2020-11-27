@@ -3,9 +3,9 @@ import { withRouter } from "react-router-dom";
 import {login, logout} from '../store/reducers/loginReducer'
 const { Row, Col, Form, Button, Container } = require("react-bootstrap");
 
-function Login(props) {
-    function onRegisterClick() {
-        props.history.push('/register/')
+function Register(props) {
+    function onEnterClick() {
+        props.history.push('/login')
     }
     return (
         <div>
@@ -21,14 +21,16 @@ function Login(props) {
                                 <Form.Label>Пароль</Form.Label>
                                 <Form.Control type="password" placeholder="Введите пароль" className="login-input"/>
                             </Form.Group>
-                            <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Запомнить меня" />
+                            <Form.Group controlId="formBasicPassword2">
+                                <Form.Label>Подтвердите пароль</Form.Label>
+                                <Form.Control type="password" placeholder="Введите пароль" className="login-input"/>
                             </Form.Group>
+                            
                             <Button variant="danger" type="submit" style={{width: "100%"}} onClick={() => {props.login('token','testUser', 'admin')}}>
-                                Войти
-                            </Button>
-                            <Button variant="secondary" type="submit" style={{width: "100%", marginTop: "15px"}} onClick={onRegisterClick}>
                                 Регистрация
+                            </Button>
+                            <Button variant="secondary" type="submit" style={{width: "100%", marginTop: "15px"}} onClick={onEnterClick}>
+                                Войти
                             </Button>
                        </Form>
                    </Row>
@@ -47,4 +49,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {login, logout})(withRouter(Login));
+export default connect(mapStateToProps, {login, logout})(withRouter(Register));

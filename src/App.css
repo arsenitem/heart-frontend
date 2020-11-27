@@ -128,7 +128,7 @@ header {
   margin-top: 70px;
   padding: 20px;
   width: 90%;
-  max-width: 300px;
+  max-width: 320px;
   position: absolute;
   top: 0;
   left: 0;
@@ -157,6 +157,10 @@ header {
 
 #nav-content li a:hover {
   color: red;
+}
+#nav-content li a:hover .notification-counter{
+  background-color: gray;
+  color:white;
 }
 
 #nav-content li:not(.small) + .small {
@@ -227,7 +231,7 @@ img {
 .nav-icon-link {
   width: 30px;
   float: left;
-  margin-right: 70px;
+  margin-right: 20px;
   text-align: center;
 }
 .login-input:focus {
@@ -236,4 +240,15 @@ img {
 }
 input[type=checkbox] {
   filter: invert(20%) hue-rotate(135deg) brightness(1.1);
+}
+.notification-counter {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: -3px;
+  font-size: 12px;
+  text-align: center;
 }

@@ -7,6 +7,10 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import api from './api'
 import { Row } from 'react-bootstrap';
+import Users from './pages/Users';
+import User from './pages/User';
+import Register from './pages/Register';
+import Notifications from './pages/Notifications';
 function App(props) {
   console.log(props)
   return (
@@ -18,14 +22,26 @@ function App(props) {
         <Route path="/main">
           <Profile/>
         </Route>
+        <Route exact path="/users">
+          <Users/>
+        </Route>
+        <Route exact path="/users/:id">
+          <User/>
+        </Route>
+        <Route exact path="/notifications">
+          <Notifications/>
+        </Route>
       </div>
     </div>
       
     :
     <div>
-      <Route path="/" component={Login}/>
+      {/* <Route path="/" component={Login}/> */}
       <Route path="/login">
         <Login/>
+      </Route>
+      <Route path="/register">
+        <Register/>
       </Route>
     </div>
    
