@@ -6,7 +6,7 @@ function Login(props) {
     return (
         <div>
               <Container>
-                  <h2 style={{textAlign: "center", color: "red", marginTop:90}}>ИСПБ "Сердце"</h2>
+                  <h2 style={{textAlign: "center", color: "red", marginTop:90}}>СППР "Сердце"</h2>
                 <Row className="justify-content-center" style={{marginTop: 100}}>   
                        <Form style={{padding:"90px", border: "1px solid red"}}>                      
                             <Form.Group controlId="formBasicEmail">
