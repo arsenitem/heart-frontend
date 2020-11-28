@@ -6,12 +6,14 @@ const data = {
   datasets: [
     {
       label: 'Вероятность(%)',
-      backgroundColor: 'rgba(38, 118, 255,0.2)',
+      backgroundColor: [3, 55, 10, 4, 1, 2, 5].map(item => {
+          if (item === 55) {return 'rgba(255,99,132,0.4)'} else {return 'rgba(38, 118, 255,0.2)'}
+      }),
       borderColor: 'rgba(38, 118, 255,1)',
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
       hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [3, 15, 10, 4, 1, 2, 5]
+      data: [3, 55, 10, 4, 1, 2, 5]
     }
   ]
 };

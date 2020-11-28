@@ -76,7 +76,7 @@ function Layout(props) {
                                  <Link to="/user_notify" className="nav-link">
                                      <div className="nav-icon-link notifications">
                                          <div className="notification-counter">
-                                             3
+                                             2
                                          </div>
                                          <i class="fas fa-bell"></i>
                                      </div>
@@ -91,6 +91,16 @@ function Layout(props) {
                                         <i class="fas fa-thumbs-up"></i>
                                      </div>
                                     Рекомендации
+                                 </Link>
+                                </li>
+                                : ""}
+                                {localStorage.getItem('role') === 'user' ? 
+                                <li>
+                                 <Link to="/diary" className="nav-link">
+                                     <div className="nav-icon-link notifications">
+                                        <i class="fas fa-thumbs-up"></i>
+                                     </div>
+                                    Дневник
                                  </Link>
                                 </li>
                                 : ""}

@@ -12,6 +12,9 @@ import User from './pages/User';
 import Register from './pages/Register';
 import Notifications from './pages/Notifications';
 import MainAdmin from './pages/MainAdmin';
+import Recomendations from './pages/Recomendations';
+import UserNotify from './pages/UserNotify';
+import Diary from './pages/Diary';
 function App(props) {
   console.log(props)
   return (
@@ -31,6 +34,15 @@ function App(props) {
         </Route>
         <Route exact path="/notifications">
           <Notifications/>
+        </Route>
+        <Route exact path="/user_notify">
+          <UserNotify/>
+        </Route>
+        <Route exact path="/diary">
+          <Diary/>
+        </Route>
+        <Route exact path="/recomendations">
+          <Recomendations/>
         </Route>
       </div>
     </div>

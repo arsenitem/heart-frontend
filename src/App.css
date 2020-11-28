@@ -817,3 +817,53 @@ tr {
   cursor: pointer;
   transition: 0.5s;
 }
+.rigth-settigs-panel {
+  width: 300px;
+  height: 1000px;
+  position: absolute;
+  left: 150%;
+  margin-top: -23px;
+  background: #5995fd;
+  display: none;
+  top: 100;
+  transition: all 0.2s ease;
+}
+.rigth-settigs-panel.active{
+  width: 300px;
+  height: 1000px;
+  position: absolute;
+  left: 100%;
+  margin-top: -23px;
+  background: #5995fd;
+  display: initial;
+  top: 0;
+  transition: all 0.2s ease;
+}
+.recomendation-item {
+  width: 800px;
+  height: 100px;
+  padding: 25px;
+  border: 2px solid #5995fd;
+  margin-top:20px;
+  text-align: center;
+  font-size: 22px;
+  font-family: Monserrat;
+}
+.notify-item {
+  width: 800px;
+  height: 140px;
+  padding: 25px;
+  border: 2px solid #5995fd;
+  margin-top:20px;
+  text-align: center;
+  font-size: 22px;
+  font-family: Monserrat;
+}
+.not-time {
+  width: 200px;
+  float: left;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -40px;
+  font-size: 16px;
+}
