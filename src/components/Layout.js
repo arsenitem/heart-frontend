@@ -34,12 +34,19 @@ function Layout(props) {
                         <div id="nav-content" tabindex="0">
                             <ul style={{fontSize:"25px"}}>
                                 <li>
+                                {localStorage.getItem('role') === 'admin' ? 
                                     <Link to="/main" className="nav-link">
                                         <div className="nav-icon-link">
                                             <i class="fas fa-user"></i>
                                         </div>
                                         Главная
                                     </Link>
+                                    :  <Link to="/users/me" className="nav-link">
+                                    <div className="nav-icon-link">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    Главная
+                                </Link>}
                                 </li>
                                 {localStorage.getItem('role') === 'admin' ? 
                                     <li>
