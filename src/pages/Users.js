@@ -20,9 +20,10 @@ function Users(props) {
         <div>
             <Row>
                 <h2>
-                    Пользователи в системе
+                    Наблюдаемые
                 </h2>
             </Row>
+            
             <Table size="md" style={{marginTop: '50px'}}>
                 <thead>
                     <tr>

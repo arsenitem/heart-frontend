@@ -7,6 +7,13 @@ function Login(props) {
     function onRegisterClick() {
         props.history.push('/register/')
     }
+
+    function onLoginClick() {
+        localStorage.setItem('token', 'token')
+        props.login('token','testUser', 'admin')
+        props.history.push('/main')
+    }
+
     return (
         <div>
               <Container>
@@ -24,9 +31,14 @@ function Login(props) {
                             <Form.Group controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Запомнить меня" />
                             </Form.Group>
-                            <Button variant="danger" type="submit" style={{width: "100%"}} onClick={() => {props.login('token','testUser', 'admin')}}>
+                            <Button variant="danger" type="submit" style={{width: "100%"}} onClick={onLoginClick}>
                                 Войти
                             </Button>
+                            <div style= {{cursor: "pointer", marginTop: "15px", border: "1px solid red", backgroundImage: "url('https://login.mos.ru/sps/login/assets//img/meth-esia-logo.png')", height: "38px", backgroundSize: "70%", backgroundRepeat: "no-repeat", backgroundPosition: "center"}} className="gos-uslugi">
+                                 
+                            </div>
+
+                                
                             <Button variant="secondary" type="submit" style={{width: "100%", marginTop: "15px"}} onClick={onRegisterClick}>
                                 Регистрация
                             </Button>

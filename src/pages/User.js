@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Row } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
 function User(props) {
@@ -12,6 +13,16 @@ function User(props) {
     }, [])
     return(
         <div>
+            <Row style= {{marginTop: "50px"}}>
+                <div style={{backgroundColor: "#ccc", width:"100%", height:"150px"}}>
+                    <div style={{width: "150px", height: "150px", float: "left"}}>
+                        <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" style={{width: "150px", height: "150px"}}>
+                        </img>
+                    </div>
+                    Мистер Больной Гипертонией
+                    
+                </div>
+            </Row>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Общие сведения</a>

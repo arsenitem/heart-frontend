@@ -11,16 +11,17 @@ import Users from './pages/Users';
 import User from './pages/User';
 import Register from './pages/Register';
 import Notifications from './pages/Notifications';
+import MainAdmin from './pages/MainAdmin';
 function App(props) {
   console.log(props)
   return (
     <BrowserRouter>
-    {props.state.loginReducer.userLoggedIn ?
+    {localStorage.getItem('token') ?
     <div>
       <Route path="/" component={Layout}/>
       <div className="main">    
         <Route path="/main">
-          <Profile/>
+          <MainAdmin/>
         </Route>
         <Route exact path="/users">
           <Users/>
@@ -36,7 +37,7 @@ function App(props) {
       
     :
     <div>
-      {/* <Route path="/" component={Login}/> */}
+      <Route path="/" component={Login}/>
       <Route path="/login">
         <Login/>
       </Route>
