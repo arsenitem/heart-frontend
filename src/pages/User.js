@@ -5,9 +5,13 @@ import Chart from '../components/Chart'
 import HeartRateChart from "../components/HeartRateChart";
 import PrognozChart from "../components/PrognozChart";
 function User(props) {
-    // useEffect(() => {
-    
-    // }, [])
+    useEffect(() => {
+        if (localStorage.getItem('role') ==="admin") {
+            setApproveButton(<Button onClick={approvePrognoz} variant="outline-primary" style={{position: "absolute", left: "80%", marginTop: "-55px",width: "150px"}}>
+                    Подтвердить прогноз
+                </Button>)
+        }
+    }, [])
     let [ancets, setAncets] = useState(true)
     let [history, setHistory] = useState(false)
     let [prognoz, setPrognoz] = useState(false)
@@ -15,8 +19,12 @@ function User(props) {
     let [show, setShow] = useState(true)
     let [prognozApproved, setPrognozApproved] = useState(false)
     let [settings, showSettings] = useState(false)
+    let [approveButton, setApproveButton] = useState(null);
     function approvePrognoz() {
         setPrognozApproved(true)
+        setApproveButton(<Button variant="outline-sucess" style={{position: "absolute", left: "80%", marginTop: "-55px",width: "150px", color: "green", borderColor: "green"}}>
+                            Подтверждено <i className="fas fa-check"></i>
+                        </Button>)
     }
     function openAnkets() {
         closeAll()
@@ -266,15 +274,8 @@ function User(props) {
             </div>
             <div className={prognoz? "profile_slider active": "profile_slider"}>
                 <i class="fas fa-times" style={{fontSize: "45px", position:"absolute", marginTop:"-60px"}} onClick={closeAll}></i>
-                {prognozApproved !== true ? 
-                    <Button onClick={approvePrognoz} variant="outline-primary" style={{position: "absolute", left: "80%", marginTop: "-55px",width: "150px"}}>
-                        Подтвердить прогноз
-                    </Button>
-                :
-                    <Button variant="outline-sucess" style={{position: "absolute", left: "80%", marginTop: "-55px",width: "150px", color: "green", borderColor: "green"}}>
-                        Подтверждено <i className="fas fa-check"></i>
-                    </Button>
-                }
+                {approveButton}
+               
                
                 <PrognozChart/>
             </div>
