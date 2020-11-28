@@ -5,7 +5,7 @@ function MainAdmin(props) {
     return (
         <div>
             <Row style={{marginTop:"60px"}}>
-                <h2>Здравствуйте, user
+                <h2>Здравствуйте, Сергей Владмирович
                     </h2>
             </Row>
             <Row style={{marginTop:"40px"}}>

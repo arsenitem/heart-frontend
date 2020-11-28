@@ -20,7 +20,7 @@ function Layout(props) {
 
                    
                     <div style={{marginRight: 0, marginLeft: "auto"}}>
-                    {props.state.loginReducer.userName} Сергей Владмирович П.
+                    {props.state.loginReducer.userName}
                         <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer", marginLeft:"20px"}} onClick={onLogout}></i>
                     </div>
                 </header>
