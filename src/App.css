@@ -35,6 +35,7 @@ header {
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: 1s;
 }
 
 .main > div {
@@ -134,7 +135,7 @@ header {
   top: 0;
   left: 0;
   height: calc(100% - 70px);
-  background: #ececec;
+  background: #8eb4f7;
   pointer-events: auto;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   transform: translateX(-100%);
@@ -154,10 +155,11 @@ header {
   display: block;
   text-transform: uppercase;
   transition: color .1s;
+  color: white
 }
 
 #nav-content li a:hover {
-  color: red;
+  color: #1e3a7b;
 }
 #nav-content li a:hover .notification-counter{
   background-color: gray;
@@ -232,7 +234,7 @@ img {
 .nav-icon-link {
   width: 30px;
   float: left;
-  margin-right: 20px;
+  margin-right: 15px;
   text-align: center;
 }
 .login-input:focus {
@@ -297,7 +299,7 @@ input {
 }
 .container-sign img{
   width: 100%;
-  scale: 0.7;
+  scale: 0.5;
   height: 50px;
 }
 .forms-container {
@@ -413,7 +415,7 @@ form.sign-in-form {
   border-color: #4481eb;
 }
 
-.btn {
+/* .btn {
   width: 150px;
   background-color: #5995fd;
   border: none;
@@ -426,8 +428,10 @@ form.sign-in-form {
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+} */
+a {
+  color :#007bff;
 }
-
 .btn:hover {
   background-color: #4d84e2;
 }
@@ -497,7 +501,7 @@ form.sign-in-form {
   padding: 0.7rem 0;
 }
 
-.btn.transparent {
+.btn-login.transparent {
   margin: 0;
   background: none;
   border: 2px solid #fff;
@@ -549,4 +553,267 @@ form.sign-in-form {
 
 .container-sign.sign-up-mode .right-panel {
   pointer-events: all;
+}
+tr {
+  cursor: pointer;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+.wrapper{
+	position: relative;
+	width: 600px;
+	margin: 100px !important;
+}
+
+.profile_card{
+	width: 600px;
+	height: 500px;
+	background: #5995fd;
+	padding: 50px 25px;
+	position: relative;
+	z-index: 1;
+}
+
+.profile_card{
+	color: #fff;
+	text-align: center;
+}
+
+.profile_card .profile_img img{
+	width: 80px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+.profile_card .profile_img .name{
+	font-size: 24px;
+	font-weight: 500;
+	margin: 15px 0 5px;
+}
+
+.profile_card .profile_img .place{
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.profile_card .place .icon{
+	margin-right: 10px;
+}
+
+.profile_icons{
+	display: flex;
+	margin: 30px 0;
+	justify-content: center;
+}
+
+.profile_icons .profile_item{
+	margin-right: 15px;
+}
+
+.profile_icons .profile_item:last-child{
+	margin-right: 0;
+}
+
+.profile_icons .icon,
+.profile_icons .number{
+	font-size: 24px;
+}
+
+.profile_icons .title{
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 10px 0;
+}
+
+.profile_btn{
+	background: #ebc654;
+	padding: 10px;
+	border-radius: 25px;
+	width: 200px;
+	margin: 0 auto;
+	color: #8d731e;
+	cursor: pointer;
+}
+
+.profile_btn:hover{
+	background: #ffc208;
+}
+
+ 
+.hist_btn,
+.data_btn,
+.prog_btn,
+.settings_btn{
+	width: 80px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.sost_btn{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.prog_btn{
+	width: 170px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.hist_btn{
+	left: 0px;
+	
+}
+.prog_btn{
+	left: 210px;
+	
+}
+.data_btn{
+	left: 400px;
+	
+}
+.sost_btn{
+	left: 100px;
+	
+}
+
+.settings_btn{
+	right: 0px;
+	
+}
+
+
+
+.profile_slider{
+	background: #fff;
+	color: #7b7a82;
+	position: absolute;
+	top: 25px;
+	left: 0;
+  font-size: 14px;  
+  visibility: hidden;
+  opacity:0;
+  transition: all 0.2s ease;
+}
+
+.profile_slider li{
+	height: 80px;
+	border-bottom: 1px solid #eceff4;
+	padding: 15px;
+}
+
+.profile_slider li:last-child{
+	border-bottom: 0;
+}
+
+.profile_slider li .slider_item,
+.profile_slider li .slider_left{
+	display: flex;
+}
+
+.profile_slider li .slider_item{
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.profile_slider img{
+	width: 35px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.profile_slider .item{
+	text-align: left;
+	font-size: 16px;
+}
+
+.profile_slider .item_email{
+	font-weight: 300;
+	margin-top: 5px;
+}
+
+.profile_slider .btn{
+	width: 100px;
+	padding: 8px 10px;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 12px;
+	text-align: center;
+}
+
+.profile_slider .btn.btn_following{
+	background: #5995fd;
+  color: #fff;
+  font-size: initial;
+}
+
+.profile_slider .btn.btn_following:hover{
+	background: #8178d1;
+}
+
+.profile_slider .btn.btn_follow{
+	border: 1px solid #7b7a82;
+}
+
+.profile_slider .btn.btn_follow:hover{
+	color: #fff;
+	background: #7b7a82;
+}
+
+.profile_slider.active{
+  left: 70%;
+  visibility: visible;
+  opacity:1;
+}
+
+.settings_btn.active{
+	background: #91d5ff;
+}
+
+.hist_btn.active{
+	background: #91d5ff;
+}
+.sost_btn.active{
+	background: #91d5ff;
+}
+.prog_btn.active{
+	background: #91d5ff;
+}
+.data_btn.active{
+	background: #91d5ff;
+}
+
+.item_email{
+	color: #ff7369;
+}
+.btn-login {
+  width: 150px;
+  background-color: #5995fd;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
 }

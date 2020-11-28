@@ -9,10 +9,18 @@ function Login(props) {
         props.history.push('/register/')
     }
 
-    function onLoginClick() {
+    function onLoginClick(user) {
         localStorage.setItem('token', 'token')
-        props.login('token','testUser', 'admin')
-        props.history.push('/main')
+        localStorage.setItem('role', user)
+       
+        if (user === 'admin') {
+            props.login('token','Сергей Владмирович П.', user)
+            props.history.push('/main')
+        } else {
+            props.login('token','Иван Иванович И.', user)
+            props.history.push('/users/me')
+        }
+        
     }
     useEffect(() => {
         const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -77,7 +85,7 @@ function Login(props) {
                     <i className="fas fa-lock"></i>
                     <input type="password" placeholder="Пароль" />
                     </div>
-                    <input type="submit" value="Войти" className="btn solid" onClick={onLoginClick}/>
+                    <input type="submit" value="Войти" className="btn-login solid" onClick={() => {onLoginClick('user')}}/>
                     <p className="social-text">Войти с помощью</p>
                     <div className="social-media">
                     <a href="#">
@@ -95,7 +103,7 @@ function Login(props) {
                         <i className="fas fa-lock"></i>
                         <input type="password" placeholder="Пароль" />
                     </div>
-                    <input type="submit" className="btn" value="Войти" />
+                    <input type="submit" className="btn-login" value="Войти" onClick={() => {onLoginClick('admin')}}/>
                     <p className="social-text">Войти с помощью</p>
                     <div className="social-media">
                         <a href="#">
@@ -108,7 +116,7 @@ function Login(props) {
         <div className="panels-container">
             <div className="panel left-panel">
                 <div className="content">
-                    <button className="btn transparent" id="sign-up-btn">
+                    <button className="btn-login transparent" id="sign-up-btn">
                     Я доктор
                     </button>
                     <p>
@@ -118,7 +126,7 @@ function Login(props) {
             </div>
             <div className="panel right-panel">
                 <div className="content">
-                    <button className="btn transparent" id="sign-in-btn">
+                    <button className="btn-login transparent" id="sign-in-btn">
                     Я пациент
                     </button>
                     <p>

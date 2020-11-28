@@ -1,7 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Chart from '../components/Chart'
-function MainAdmin() {
+function MainAdmin(props) {
     return (
         <div>
             <Row style={{marginTop:"60px"}}>
@@ -11,7 +11,7 @@ function MainAdmin() {
             <Row style={{marginTop:"40px"}}>
                 <Col style={{textAlign: "center"}}>
                     <div className="main-col-img">
-                        <img src="https://vitbiomedplus.ru/storage/5b3ced580a257.png">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSab0EWfzli_JcQ_lxm7IQN9p1KDPWJgUrwqg&usqp=CAU">
                         </img>
                     </div>
                   
@@ -23,11 +23,11 @@ function MainAdmin() {
                 </Col>
                 <Col style={{textAlign: "center"}}>
                     <div className="main-col-img">
-                        <img src="https://sun9-67.userapi.com/impg/0wIaX2IKqwRebAqfOkzSQsZ1wAw1HCbwmkfIAw/5-5nmC2HZRQ.jpg?size=979x649&quality=96&proxy=1&sign=34a1bfd9fc70488bada6bdac53f2cb73">
+                        <img src="https://www.pngkey.com/png/full/412-4125400_manage-your-team-users-icon-png-blue.png">
                         </img>
                     </div>
                    
-                    <Link>
+                    <Link to="/users">
                         Наблюдаемые
                     </Link>
                     <hr/>
@@ -37,7 +37,7 @@ function MainAdmin() {
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2" onClick={() => {props.history.push('/users/1')}}>
                                 <i class="fa fa-search"></i>
                             </span>
                         </div>
@@ -45,7 +45,7 @@ function MainAdmin() {
                 </Col>
                 <Col style={{textAlign: "center"}}>
                     <div className="main-col-img">
-                        <img src="https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/settings-icon-14-256.png">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJE7yLesVzpeRsCEOvZwD-NqIYXV8kD75zQ&usqp=CAU" style={{width:"100px",marginLeft: "50px"}}>
                         </img>
                     </div>
                     <Link>
@@ -58,4 +58,4 @@ function MainAdmin() {
         </div>
     );
 }
-export default MainAdmin;
+export default withRouter(MainAdmin);

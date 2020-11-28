@@ -13,7 +13,12 @@ function Layout(props) {
         <div style={{float: "left", zIndex: "100000", position: "absolute"}}>
             <div className="page">
                 <header tabindex="0">
-                    <label style={{marginLeft: "10%", color: "#ef0000"}}>СППР "Сердце"</label>
+                    <div style={{marginLeft: "10%", color: "white", width: "200px"}}>
+                    <i class="fas fa-hand-holding-heart" style={{fontSize: "26px"}}></i>
+                    <label style={{marginLeft: "3%"}}>СППР "Сердце"</label>
+                    </div>
+
+                   
                     <div style={{marginRight: 0, marginLeft: "auto"}}>
                     {props.state.loginReducer.userName} Сергей Владмирович П.
                         <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer", marginLeft:"20px"}} onClick={onLogout}></i>
@@ -27,42 +32,68 @@ function Layout(props) {
                             <span className="icon-bar"></span>
                         </div>
                         <div id="nav-content" tabindex="0">
-                            <ul style={{fontSize:"26px"}}>
+                            <ul style={{fontSize:"25px"}}>
                                 <li>
                                     <Link to="/main" className="nav-link">
                                         <div className="nav-icon-link">
                                             <i class="fas fa-user"></i>
                                         </div>
-                                        Профиль
+                                        Главная
                                     </Link>
                                 </li>
-                                <li>
+                                {localStorage.getItem('role') === 'admin' ? 
+                                    <li>
                                     <Link to="/users" className="nav-link">
                                         <div className="nav-icon-link">
                                             <i class="fas fa-users"></i>
                                         </div>
-                                        Больные
+                                        Наблюдаемые
                                     </Link>
-
                                 </li>
+                                : ""}
+                                {localStorage.getItem('role') === 'admin' ? 
                                 <li>
-                                    <Link to="/notifications" className="nav-link">
-                                        <div className="nav-icon-link notifications">
-                                            <div className="notification-counter">
-                                                3
-                                            </div>
-                                            <i class="fas fa-bell"></i>
-                                        </div>
-                                        Оповещения
-                                    </Link>
+                                 <Link to="/notifications" className="nav-link">
+                                     <div className="nav-icon-link notifications">
+                                         <div className="notification-counter">
+                                             3
+                                         </div>
+                                         <i class="fas fa-bell"></i>
+                                     </div>
+                                     Оповещения
+                                 </Link>
                                 </li>
+                                : ""}
+                               {localStorage.getItem('role') === 'user' ? 
+                                <li>
+                                 <Link to="/user_notify" className="nav-link">
+                                     <div className="nav-icon-link notifications">
+                                         <div className="notification-counter">
+                                             3
+                                         </div>
+                                         <i class="fas fa-bell"></i>
+                                     </div>
+                                     Уведомления
+                                 </Link>
+                                </li>
+                                : ""}
+                                {localStorage.getItem('role') === 'user' ? 
+                                <li>
+                                 <Link to="/recomendations" className="nav-link">
+                                     <div className="nav-icon-link notifications">
+                                        <i class="fas fa-thumbs-up"></i>
+                                     </div>
+                                    Рекомендации
+                                 </Link>
+                                </li>
+                                : ""}
                                 <li>
                                     <Link to="/form" className="nav-link">
                                         <div className="nav-icon-link notifications">
                                            
-                                            <i class="fas fa-bell"></i>
+                                            <i class="fas fa-cogs"></i>
                                         </div>
-                                        Анкеты 1/4
+                                        Настройки
                                     </Link>
                                 </li>
                                 <li><Link to="/profile" className="nav-link">Что-то</Link></li>
