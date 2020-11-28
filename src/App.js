@@ -15,6 +15,9 @@ import MainAdmin from './pages/MainAdmin';
 import Recomendations from './pages/Recomendations';
 import UserNotify from './pages/UserNotify';
 import Diary from './pages/Diary';
+import AreaAnket from './pages/AreaAnket';
+import AnalysisResult from './pages/AnalysisResult';
+import MainAnket from './pages/MainAnket';
 function App(props) {
   console.log(props)
   return (
@@ -40,6 +43,15 @@ function App(props) {
         </Route>
         <Route exact path="/diary">
           <Diary/>
+        </Route>
+        <Route exact path="/anket_area">
+          <AreaAnket/>
+        </Route>
+        <Route exact path="/anket_main">
+          <MainAnket/>
+        </Route>
+        <Route exact path="/analysis_result/:id">
+          <AnalysisResult/>
         </Route>
         <Route exact path="/recomendations">
           <Recomendations/>

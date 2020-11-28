@@ -18,7 +18,7 @@ function Notifications(props) {
     }
     return (
         <div>
-            <Row>
+            <Row className="justify-content-center" style={{marginTop: "30px"}}>
                 <h2>
                     Возможные отклонения
                 </h2>
@@ -28,20 +28,30 @@ function Notifications(props) {
                     <tr>
                     <th>Пользователь</th>
                     <th>Возраст</th>
-                    <th>Аномалии</th>
+                    <th>Группа</th>
+                    <th>Причнина</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => {
-                        return (
-                            <tr onClick={() => {getUserInfo(user.id)}}>
-                            <td>{user.id}</td>
-                            <td>{user.age}</td>
-                            <td>{user.anomaly}</td>
-                            </tr>
-                        )
-                    })}
-                    
+                   
+                    <tr onClick={() => {getUserInfo(124124)}}>
+                    <td>Галкина Виталина Аристарховна</td>
+                    <td>34</td>
+                    <td>Гипертония</td>
+                    <td>Повышеное давление </td>
+                    </tr>
+                    <tr onClick={() => {getUserInfo(124124)}}>
+                    <td>Карпов Святослав Матвеевич</td>
+                    <td>71</td>
+                    <td>Здоровье</td>
+                    <td>Отклонение от нормы </td>
+                    </tr>
+                    <tr onClick={() => {getUserInfo(124124)}}>
+                    <td>Емельянов Владлен Владиславович</td>
+                    <td>69</td>
+                    <td>Гипертония</td>
+                    <td>Повышеное давление </td>
+                    </tr>
                    
                 </tbody>
             </Table>

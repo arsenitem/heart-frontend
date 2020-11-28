@@ -15,16 +15,33 @@ function User(props) {
     let [ancets, setAncets] = useState(true)
     let [history, setHistory] = useState(false)
     let [prognoz, setPrognoz] = useState(false)
+    let [sost, setSost] = useState(false)
     let [data, setData] = useState(false)
     let [show, setShow] = useState(true)
     let [prognozApproved, setPrognozApproved] = useState(false)
     let [settings, showSettings] = useState(false)
     let [approveButton, setApproveButton] = useState(null);
+    let [fullInfo, setFullInfo] = useState(false);
+    let [diagnosis, setDiagnosis] = useState(false);
+    function goToSost() {
+        props.history.push('/states/Гипертензия')
+    }
+    function fillAreaAnket() {
+        props.history.push('/anket_area')
+    }
     function approvePrognoz() {
         setPrognozApproved(true)
         setApproveButton(<Button variant="outline-sucess" style={{position: "absolute", left: "80%", marginTop: "-55px",width: "150px", color: "green", borderColor: "green"}}>
                             Подтверждено <i className="fas fa-check"></i>
                         </Button>)
+    }
+    function openFullInfo() {
+        setDiagnosis(false)
+        setFullInfo(!fullInfo)
+    }
+    function openDiagnosis() {
+        setFullInfo(false)
+        setDiagnosis(!diagnosis)
     }
     function openAnkets() {
         closeAll()
@@ -47,11 +64,16 @@ function User(props) {
         setPrognoz(!prognoz)
         
     }
+    function openSost() {
+        closeAll()
+        setSost(!sost)
+    }
     function closeAll() {
         setAncets(true)
         setHistory(false)
         setPrognoz(false)
         setData(false)
+        setSost(false)
     }
     return(
         <div className="wrapper">
@@ -63,12 +85,46 @@ function User(props) {
                 </p>
                 <hr />
                 <div className="d-flex justify-content-end">
-                <Button onClick={() =>{}} variant="outline-success">
+                <Button onClick={() =>{props.history.push('/anket_main')}} variant="outline-success">
                     Заполнить
                 </Button>
                 </div>
             </Alert>
             : ""}
+            <div className={diagnosis ? "bottom-togler active": "bottom-togler"}>
+                            <Row className="justify-content-center">
+                                <Button style={{marginTop: "30px"}} onClick={() => {props.history.push('/analysis_result/5410100101')}}>Просмотр результатов исследований и анализов</Button>
+                            </Row>
+                            <Row className="justify-content-center">
+                            <Button style={{marginTop: "30px"}}>Cформировать отчет</Button>
+                            </Row>
+                            <Row className="justify-content-center">
+                            <Button style={{marginTop: "30px"}}>Выписать рецепт</Button>
+                            </Row>
+                            
+                        </div>
+                        <div className={fullInfo ? "bottom-togler active": "bottom-togler"}>
+                            <p>
+                            Гражданство: Россия
+                            </p>
+                             <p>
+                            Домашний адрес: Черепоковый переулок. дом 3
+                            </p>
+                            <p>
+                            Рабочий адрес: ул. Рабочая 11
+                            </p>
+                            <p>
+                            Мобильный телефон: 89630112262
+                            </p>
+                               <p>
+                               Электронная почта: getrekt@mail.ru
+                               </p>
+                               <p>
+                               Телеграм: @user123
+                               </p>
+                            
+
+                        </div> 
             <div className="profile_card">
                 <div className="settings_btn" onClick={openAnkets}>
                     Анкеты
@@ -76,7 +132,7 @@ function User(props) {
                 <div className="hist_btn" onClick={openHistory}>
                     История
                 </div>
-                <div className="sost_btn">
+                <div className="sost_btn" onClick={openSost}>
                     Состояние
                 </div>
                 <div className="prog_btn" onClick={openPrognoz}>
@@ -84,13 +140,7 @@ function User(props) {
                 </div>
                 <div className="data_btn" onClick={showData}>
                     Данные
-                </div>
-                
-
-                
-                
-                
-            
+                </div>                                                              
                 <div className="profile_wrap">
                     <div className="profile_img">
                         <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" alt="profile_pic"/>
@@ -120,10 +170,21 @@ function User(props) {
                             <div className="num">17.11.1963</div>
                         </div>
                     </div>
-
-                    <div className="profile_btn">
-                        Подробная информация <i className="fas fa-caret-down"></i>
-                    </div>
+                    {localStorage.getItem("role") === "admin" ?
+                        <Row className="justify-content-between">
+                        <div className="profile_btn" onClick={openFullInfo}>
+                            Подробная информация <i className="fas fa-caret-down"></i>
+                        </div>
+                        <div className="profile_btn" onClick={openDiagnosis}>
+                            Диагностика <i class="fas fa-tools"></i>
+                        </div>
+                    </Row>:
+                        <div className="profile_btn" onClick={openFullInfo}>
+                            Подробная информация <i className="fas fa-caret-down"></i>
+                        </div>
+                    }
+                                           
+                             
                 </div>
             </div>
             <div className={ancets? "profile_slider active": "profile_slider"}>
@@ -153,7 +214,7 @@ function User(props) {
                                     
                                     <div className="item">
                                         <div className="item_name">
-                                            Анкета 2: Питание
+                                            Анкета 2: Территория
                                         </div>
                                         <div className="item_email">
                                             Не заполнена <i className="fas fa-times"></i>
@@ -163,7 +224,7 @@ function User(props) {
                                 </div>
                                 <div className="slider_right">
                                 {localStorage.getItem('role') === 'user' ? 
-                                    <div className="btn btn_following">Заполнить</div>
+                                    <div className="btn btn_following" onClick={fillAreaAnket}>Заполнить</div>
                                 : ""}
                                 </div>
                             </div>
@@ -174,7 +235,7 @@ function User(props) {
                                     
                                     <div className="item">
                                         <div className="item_name">
-                                            Анкета 3: Образ жизни
+                                            Анкета 3: Достаток
                                         </div>
                                         <div className="item_email">
                                             Не заполнена <i className="fas fa-times"></i>
@@ -215,7 +276,7 @@ function User(props) {
                                     
                                     <div className="item">
                                         <div className="item_name">
-                                            Анкета 5: Место жительства
+                                            Анкета 6: Питание
                                         </div>
                                         <div className="item_email">
                                             Не заполнена <i className="fas fa-times"></i>
@@ -274,9 +335,7 @@ function User(props) {
             </div>
             <div className={prognoz? "profile_slider active": "profile_slider"}>
                 <i class="fas fa-times" style={{fontSize: "45px", position:"absolute", marginTop:"-60px"}} onClick={closeAll}></i>
-                {approveButton}
-               
-               
+                {approveButton}                     
                 <PrognozChart/>
             </div>
             <div className={data? "profile_slider active": "profile_slider"}>
@@ -285,6 +344,25 @@ function User(props) {
                 <HeartRateChart/>
                 <Chart/>
                 <div className={settings? "rigth-settigs-panel active": "rigth-settigs-panel"} ></div>
+            </div>
+            <div className={sost? "profile_slider active": "profile_slider"}>
+               <Row>
+                   <div style={{width: "800px", height:"600px"}}>
+                       <div style={{fontSize: "26px", height:"110px"}}>
+                            Текущее состояние: <p style={{color: "#a20f0f"}}>Гипертензия</p> 
+                       </div>
+                       {localStorage.getItem('role') === "admin" ?
+                             <Row>
+                             <Button style={{width:"200px"}} onClick={goToSost}>
+                                 Пациенты со схожим состоянием
+                             </Button>
+                        </Row>
+                       : ""
+                       }
+                      
+                       
+                   </div>
+               </Row>
             </div>
         </div>
     )

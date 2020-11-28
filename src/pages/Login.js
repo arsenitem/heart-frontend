@@ -104,12 +104,6 @@ function Login(props) {
                         <input type="password" placeholder="Пароль" />
                     </div>
                     <input type="submit" className="btn-login" value="Войти" onClick={() => {onLoginClick('admin')}}/>
-                    <p className="social-text">Войти с помощью</p>
-                    <div className="social-media">
-                        <a href="#">
-                            <p><img width="200" height="50" src="https://login.mos.ru/sps/login/assets//img/meth-esia-logo.png" alt="Госуслуги"/></p>
-                        </a>
-                    </div>
                 </form>
             </div>
 	    </div>

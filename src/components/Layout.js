@@ -98,7 +98,7 @@ function Layout(props) {
                                 <li>
                                  <Link to="/diary" className="nav-link">
                                      <div className="nav-icon-link notifications">
-                                        <i class="fas fa-thumbs-up"></i>
+                                        <i class="fas fa-notes-medical"></i>
                                      </div>
                                     Дневник
                                  </Link>
