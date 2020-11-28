@@ -15,7 +15,7 @@ function Layout(props) {
                 <header tabindex="0">
                     <label style={{marginLeft: "10%", color: "#ef0000"}}>СППР "Сердце"</label>
                     <div style={{marginRight: 0, marginLeft: "auto"}}>
-                    {props.state.loginReducer.userName}
+                    {props.state.loginReducer.userName} Сергей Владмирович П.
                         <i class="fas fa-sign-out-alt" style={{fontSize:"32px", marginRight: 0, marginLeft: "auto",cursor: "pointer", marginLeft:"20px"}} onClick={onLogout}></i>
                     </div>
                 </header>
