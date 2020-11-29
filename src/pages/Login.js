@@ -17,7 +17,7 @@ function Login(props) {
             props.login('token','Сергей Владимирович П.', user)
             props.history.push('/main')
         } else {
-            props.login('token','Иван Иванович И.', user)
+            props.login('token','Станислав Михайлович К.', user)
             props.history.push('/users/me')
         }
         
