@@ -113,8 +113,8 @@ function Layout(props) {
                                         Настройки
                                     </Link>
                                 </li>
-                                <li><Link to="/profile" className="nav-link">Что-то</Link></li>
-                                <li className="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
+                               
+                                <li className="small"><a href="#0">Команда Курабье</a></li>
                             </ul>
                         </div>
                     </div>
