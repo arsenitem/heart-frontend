@@ -103,7 +103,7 @@ function User(props) {
                             </Row>
                             
                         </div>
-                        <div className={fullInfo ? "bottom-togler active": "bottom-togler"}>
+                        <div className={fullInfo ? "bottom-togler active": "bottom-togler"} style={{paddingLeft: "50px"}}>
                             <p>
                             Гражданство: Россия
                             </p>
