@@ -15,7 +15,7 @@ function Layout(props) {
                 <header tabindex="0">
                     <div style={{marginLeft: "10%", color: "white", width: "200px"}}>
                     <i class="fas fa-hand-holding-heart" style={{fontSize: "26px"}}></i>
-                    <label style={{marginLeft: "3%"}}>СППР "Сердце"</label>
+                    <label style={{marginLeft: "8%", marginTop: "-8%"}}>СППР "Сердце"</label>
                     </div>
 
                    

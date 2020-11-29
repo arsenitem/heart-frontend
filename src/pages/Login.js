@@ -89,7 +89,7 @@ function Login(props) {
                     <p className="social-text">Войти с помощью</p>
                     <div className="social-media">
                     <a href="#">
-                        <p ><img width="200" height="50" src="https://login.mos.ru/sps/login/assets//img/meth-esia-logo.png" alt="Госуслуги"/></p>
+                        <p ><img width="100%" style={{ transform:"scale(0.5)"}} src="https://login.mos.ru/sps/login/assets//img/meth-esia-logo.png" alt="Госуслуги"/></p>
                     </a>
                     </div>
                 </form>

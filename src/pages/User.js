@@ -75,17 +75,22 @@ function User(props) {
         setData(false)
         setSost(false)
     }
+    function setModalClose() {
+        setShow(false)
+        props.history.push('/anket_main')
+        localStorage.setItem('modal', true)
+    }
     return(
         <div className="wrapper">
-            {localStorage.getItem('role') === 'user' ? 
-            <Alert show={show} variant="success" onClose={() => setShow(false)} dismissible style={{position:"absolute",left: "115%", marginTop: "-100px",width: "600px"}}>
+            {localStorage.getItem('role') === 'user' && localStorage.getItem('modal') !== true ? 
+            <Alert show={show} variant="success" onClose={() => setModalClose()} dismissible style={{position:"absolute", left: "110%", marginTop: "-100px",width: "600px"}}>
             <Alert.Heading>Доступна новая анкета</Alert.Heading>
                 <p>
                     Прохождение данной анкеты позволит с большей точностью предсказать возможные болезни
                 </p>
                 <hr />
                 <div className="d-flex justify-content-end">
-                <Button onClick={() =>{props.history.push('/anket_main')}} variant="outline-success">
+                <Button onClick={() =>{setModalClose()}} variant="outline-success">
                     Заполнить
                 </Button>
                 </div>
@@ -144,7 +149,7 @@ function User(props) {
                 <div className="profile_wrap">
                     <div className="profile_img">
                         <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" alt="profile_pic"/>
-                        <p className="name">Иванов Иван Иванович</p><br/>
+                        <p className="name">Карпов Станислав Михайлович</p><br/>
                         <p className="place">
                             <span className="icon">
                                 <i className="fas fa-map-pin"></i>
@@ -167,7 +172,7 @@ function User(props) {
                         <div className="profile_item">
                             <div className="icon"><i className="fas fa-calendar-alt"></i></div>
                             <div className="title">Дата рождения</div>
-                            <div className="num">17.11.1963</div>
+                            <div className="num">17.11.1975</div>
                         </div>
                     </div>
                     {localStorage.getItem("role") === "admin" ?

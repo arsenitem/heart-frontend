@@ -5,7 +5,7 @@ function AreaAnket() {
     let [send, setSend] = useState(false)
     return(
             <>
-            {send ? <Row className="justify-content-center" style={{marginTop:"30%"}}>Ваш ответ записан. Спасибо!</Row>: 
+            {send ? <Row className="justify-content-center" style={{marginTop:"10%"}}>Ваш ответ записан. Спасибо!</Row>: 
                 <form class="decor">
                 <div class="form-left-decoration"></div>
                 <div class="form-right-decoration"></div>

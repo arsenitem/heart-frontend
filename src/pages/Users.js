@@ -40,17 +40,17 @@ function Users(props) {
                 <tbody>
                     <tr onClick={() => {getUserInfo(5410100101)}}>
                         <td>5410100101</td>
-                        <td>Карпов Станислав Михайлович</td>
-                        <td>45</td>
+                        <td>Васильев Кирилл Григорьевич</td>
+                        <td>71</td>
                         <td>М</td>
                         <td>Здоровые</td>
                     </tr>
-                    <tr onClick={() => {getUserInfo(5460202401)}} style={{borderBottom: "2px solid red"}}>
+                    <tr onClick={() => {getUserInfo(5460202401)}} style={{background: "rgba(255,99,132,0.4)"}}>
                         <td>5460202401</td>
                         <td>Галкина Виталина Аристарховна</td>
                         <td>34</td>
                         <td>Ж</td>
-                        <td>Гипертония <i class="far fa-question-circle" title="Повышенное давление"></i></td>
+                        <td >Гипертония <i class="far fa-question-circle" title="Повышенное давление"></i></td>
                     </tr>
                     <tr onClick={() => {getUserInfo(5460102001)}}>
                         <td>5460102001</td>
@@ -73,19 +73,19 @@ function Users(props) {
                         <td>Ж</td>
                         <td>Здоровые</td>
                     </tr>
-                    <tr onClick={() => {getUserInfo(5450400901)}} style={{borderBottom: "2px solid red"}}>
+                    <tr onClick={() => {getUserInfo(5450400901)}} style={{background: "rgba(255,99,132,0.4)"}}>
                         <td>5450400901</td>
-                        <td>Карпов Святослав Матвеевич</td>
-                        <td>71</td>
+                        <td>Карпов Станислав Михайлович</td>
+                        <td>45</td>
                         <td>М</td>
-                        <td>Здоровые <i class="far fa-question-circle" title="Низкая физ.активность"></i></td>
+                        <td >Здоровые <i class="far fa-question-circle" title="Низкая физ.активность"></i></td>
                     </tr>
-                    <tr onClick={() => {getUserInfo(5450200101)}} style={{borderBottom: "2px solid red"}}>
+                    <tr onClick={() => {getUserInfo(5450200101)}} style={{background: "rgba(255,99,132,0.4)"}}>
                         <td>5450200101</td>
                         <td>Емельянов Владлен Владиславович</td>
                         <td>69</td>
                         <td>М</td>
-                        <td>Гипертония <i class="far fa-question-circle" title="Повышенное давление"></i></td>
+                        <td >Гипертония <i class="far fa-question-circle" title="Повышенное давление"></i></td>
                     </tr>
                    
                 </tbody>

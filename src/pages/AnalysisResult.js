@@ -5,9 +5,9 @@ function AnalysisResult() {
         <Row className="justify-content-center" style={{marginTop:"30px", border: "3px solid #5995fd", width: "60%"}}>
            <Col md={4}>
             ID <hr/>
-            САД1<hr/>
+            САД1<hr style={{background: "rgba(255,99,132,0.7)"}}/>
             ДАД1<hr/>
-            САД2<hr/>
+            САД2<hr style={{background: "rgba(255,99,132,0.7)"}}/>
             ДАД2<hr/>
             ЧСС1<hr/>
             ЧСС2<hr/>
@@ -90,9 +90,9 @@ function AnalysisResult() {
            </Col>
            <Col md={2}>
            5410100101<hr/>
-            155<hr/>
+            155<hr style={{background: "rgba(255,99,132,0.7)"}}/>
             109<hr/>
-            147<hr/>
+            147<hr style={{background: "rgba(255,99,132,0.7)"}}/>
             91<hr/>
             65<hr/>
             63<hr/>
