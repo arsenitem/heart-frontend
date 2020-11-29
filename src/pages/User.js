@@ -78,11 +78,11 @@ function User(props) {
     function setModalClose() {
         setShow(false)
         props.history.push('/anket_main')
-        localStorage.setItem('modal', true)
+        localStorage.setItem('modal', 'show')
     }
     return(
         <div className="wrapper">
-            {localStorage.getItem('role') === 'user' && localStorage.getItem('modal') !== true ? 
+            {(localStorage.getItem('role') === 'user' && localStorage.getItem('modal') !== 'show') ? 
             <Alert show={show} variant="success" onClose={() => setModalClose()} dismissible style={{position:"absolute", left: "110%", marginTop: "-100px",width: "600px"}}>
             <Alert.Heading>Доступна новая анкета</Alert.Heading>
                 <p>
