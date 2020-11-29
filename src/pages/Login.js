@@ -14,7 +14,7 @@ function Login(props) {
         localStorage.setItem('role', user)
        
         if (user === 'admin') {
-            props.login('token','Сергей Владмирович П.', user)
+            props.login('token','Сергей Владимирович П.', user)
             props.history.push('/main')
         } else {
             props.login('token','Иван Иванович И.', user)
