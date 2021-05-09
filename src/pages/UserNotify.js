@@ -7,7 +7,7 @@ function UserNotify() {
                <Row className="justify-content-center">
                     <div className="notify-item">
                         <div className="not-time">{new Date().toLocaleString()}</div>
-                        Обнаружено повышеное артериальное давление
+                        Обнаружена повышенная частота сердечного ритма
                         <hr/>
                         <label style={{fontSize: "20px"}}>Необходимо пройти тестирование в клинике</label>
                     </div>

@@ -35,7 +35,7 @@ function Register(props) {
                        </Form>
                    </Row>
                    <Row className="footer justify-content-center" style={{marginTop: "20%"}}>
-                        @Команада Курабье 2020
+                       
                    </Row>
               </Container>
 

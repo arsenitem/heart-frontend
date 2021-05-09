@@ -8,7 +8,7 @@ function Notifications(props) {
         console.log(props)
         // api.get('/users').then(response => {
         //     setUsers(response.data.users)
-            setUsers([{id:1,age:12, anomaly: "loh"},{id:21,age:12, anomaly: "loh"},{id:31,age:12, anomaly: "loh"}])
+            setUsers([{id:1,age:23, anomaly: "Повышенная ЧСС"},{id:21,age:54, anomaly: "Пониженная гидратация"},{id:31,age:42, anomaly: "Мало шагов"}])
         // }).catch(err => {
         //     console.log(err)
         // })

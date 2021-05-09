@@ -35,7 +35,7 @@ function MainAdmin(props) {
                     <hr/>
                     Поиск наблюдаемого
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Введите ФИО" aria-label="Введите ФИО" aria-describedby="basic-addon2"/>
+                        <input type="text" class="form-control" placeholder="Введите ФИО пользователя" aria-label="Введите ФИО" aria-describedby="basic-addon2"/>
                         <div class="input-group-append">
                             <span class="input-group-text" id="basic-addon2" onClick={() => {props.history.push('/users/1')}}>
                                 <i class="fa fa-search"></i>
